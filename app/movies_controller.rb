@@ -21,6 +21,7 @@ def can_be_created_with_a_hash_of_attributes
       in_theaters: false
   }
   movie = Movie.new(attributes)
+  movie.save
 end
 
 def can_be_created_in_a_block(args = {title:"Home Alone", release_date: 1990})
@@ -49,6 +50,10 @@ end
 
 def can_find_the_first_item_from_the_database_using_id
   Movie.find_by(id:1)
+end
+
+def can_find_by_any_attribute
+  Movie.find
 end
 
 def can_find_by_multiple_attributes
